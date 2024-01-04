@@ -1,0 +1,40 @@
+.home {
+    display: flex;
+    width: auto;
+    height: auto;
+    max-width: 90%;
+
+    flex-direction: column;
+    /* align-items: center;  */
+    justify-content: center;
+    
+  }
+.nav-Container{
+  margin-top: 10px;
+}
+.search-container{
+  display: flex;
+  padding: 260px 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: antiquewhite;
+  /* background-image: URL("https://img.freepik.com/free-photo/full-shot-travel-concept-with-landmarks_23-2149153258.jpg?size=626&ext=jpg&ga=GA1.1.934692035.1704366009&semt=sph"); */
+  background-size: cover;
+  background-position: center;
+}
+
+.popular-event-container{
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-top: 20px;
+}
+
+
+
+.popular-hotspot-container{
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-top: 20px;
+}

@@ -1,0 +1,88 @@
+.nav-bar{
+    /* align-items: center; */
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.Trip-Logo-Container{
+    height: 10px;
+    width: 30px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.Trip-Logo-Container .Trip-Logo{
+    margin-top: -15px;
+    width: 250px;
+}
+.nav-bar .menu-list{
+    display: flex;
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 80px;
+    position: relative;
+}
+.nav-bar .nav{
+    color: #333333;
+    font-family: "Lato-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 22.4px;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+.login-button{
+    border: none;
+}
+
+.nav-bar .login-signup-outline {
+    background-color: transparent;
+    border-color: #333333; 
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    overflow: hidden; 
+  }
+.menu-list button{
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+
+.nav button{
+    border: none;
+    letter-spacing: 2px;
+}
+.nav button:hover{
+    cursor: pointer;
+    background-color: antiquewhite;
+}
+.login-signup {
+    width: 100%; 
+    height: auto;
+    display: block; 
+  }
+  
+.login{
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+      
+}
+.login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
