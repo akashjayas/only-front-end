@@ -1,42 +1,41 @@
 .nav-bar{
     /* align-items: center; */
     display: flex;
+    background-color: #fff;
     justify-content: space-between;
-    position: relative;
-    width: 100%;
+    align-items: center;
+    width: 90%;
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 .Trip-Logo-Container{
-    height: 10px;
-    width: 30px;
-    position: relative;
+    height: 90px;
+    display: flex;
     white-space: nowrap;
-    width: fit-content;
+    width: 245px;
+    margin-left: 10px;
 }
 
-.Trip-Logo-Container .Trip-Logo{
-    margin-top: -15px;
-    width: 250px;
+.Trip-Logo-Container img{
+    height: 100%;
+    width: 100%;
 }
+
 .nav-bar .menu-list{
     display: flex;
-    align-items: flex-start;
-    display: inline-flex;
-    flex: 0 0 auto;
+    flex-direction: row;
     gap: 80px;
-    position: relative;
 }
 .nav-bar .nav{
     color: #333333;
     font-family: "Lato-Regular", Helvetica;
     font-size: 16px;
     font-weight: 400;
-    letter-spacing: 0;
-    line-height: 22.4px;
-    margin-top: -1px;
-    position: relative;
     white-space: nowrap;
     width: fit-content;
+}
+.nav-bar .nav button:hover{
+    letter-spacing: 2px;
 }
 .login-button{
     border: none;

@@ -17,12 +17,12 @@ function NavBar() {
 
   return (
     <div className='nav-bar'>
-      <div className='Trip-Logo-Container'>
+      <div className='Trip-Logo-Container' >
         <Link to="/" style={{ textDecoration: "none", color: "black" }}>
           <img className='Trip-Logo' src={Logo}/>
         </Link>
       </div>
-      <div className='menu-list'>
+      <div className='menu-list' >
         <div className='nav'>
           <Link to="/EventsHome">
             <button>Events</button>

@@ -2,14 +2,15 @@
     display: flex;
     width: auto;
     height: auto;
-    max-width: 90%;
+    max-width: 100%;
 
     flex-direction: column;
-    /* align-items: center;  */
     justify-content: center;
     
   }
-.nav-Container{
+.nav-container{
+  display: flex;
+  justify-content: center;
   margin-top: 10px;
 }
 .search-container{
@@ -17,8 +18,7 @@
   padding: 260px 10px;
   align-items: center;
   justify-content: center;
-  background-color: antiquewhite;
-  /* background-image: URL("https://img.freepik.com/free-photo/full-shot-travel-concept-with-landmarks_23-2149153258.jpg?size=626&ext=jpg&ga=GA1.1.934692035.1704366009&semt=sph"); */
+ 
   background-size: cover;
   background-position: center;
 }

@@ -34,6 +34,8 @@ function Home() {
   }, [currentImageIndex]);
 
   const containerStyle = {
+    height:'730px',
+    width:'100%',
     backgroundImage: `url('${imageUrls[currentImageIndex]}')`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -41,39 +43,49 @@ function Home() {
   };
 
   return (
-    <div className='home'>
+    <div className='home' >
+
+      <div className='first-slide' style={containerStyle}>
         <div className='nav-container'><NavBar/></div>
-        <div className='search-container' style={containerStyle}>
+        <div className='search-container' >
           <SearchBar/>
         </div>
-        <div>
+      </div>
           <h3>Events</h3>
-          <div className='popular-event-container'>
-          {Event_Details.map(details=>(
-      <EventComponent
-      eventId={details.event_id}
-      eventName={details.event_name} 
-      eventDiscription={details.event_discription} 
-      eventDate={details.event_happening} 
-      eventImage={details.event_image} 
-      eventAddress={details.event_address} 
-      alt={details.image_alt}/>
-      ))}
-          </div>
-        </div>
-        <div><h3>Popular Spots</h3><div className='popular-hotspot-container'>
-          {Tourist_Spot_Details.map(spot=>(
-          <TouristSpotComponent
-          spotId={spot.spot_id}
-          spotName={spot.spot_name}
-          spotDescription={spot.spot_description}
-          spotImage={spot.spot_image}
-          spotAlt={spot.image_alt}/>
-          ))}
           
-        </div>
-    </div>
-    </div>
+          <div className='popular-event-container'>
+              {
+              Event_Details.map
+                (details=>
+                  (
+                    <EventComponent
+                    eventId={details.event_id}
+                    eventName={details.event_name} 
+                    eventDiscription={details.event_discription} 
+                    eventDate={details.event_happening} 
+                    eventImage={details.event_image} 
+                    eventAddress={details.event_address} 
+                    alt={details.image_alt}/>
+                  )
+                )
+              }
+          </div>
+        <h3>Popular Spots</h3>
+          <div className='popular-hotspot-container'>
+            {Tourist_Spot_Details.map(spot=>(
+            <TouristSpotComponent
+            spotId={spot.spot_id}
+            spotName={spot.spot_name}
+            spotDescription={spot.spot_description}
+            spotImage={spot.spot_image}
+            spotAlt={spot.image_alt}/>
+            ))}
+            
+          </div>
+     
+
+  </div>
+
   )
 }
 export default Home
