@@ -13,7 +13,7 @@ function TouristSpotComponent({spotId,spotName,spotDescription,spotImage,spotAlt
       : spotDescription;
       
   return (
-    <div>
+    <div >
       <div className="spot-card">
   <img src={spotImage} alt={spotAlt}/>
   <div className="spot-card__content">

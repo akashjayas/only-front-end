@@ -4,14 +4,21 @@ import NavBar from '../NavBar/NavBar';
 import './TouristSpotsHomePage.css';
 import TouristSpotComponent from './TouristSpotComponent';
 // import Loading from '../LoadingComponents/Loading';
+import Tourist_Spot_Details from './TouristSpotDetails';
 function TouristSpotHomePage() {
   return (
-    <div>
+    <div className='home'>
       <div className='nav'>
         <NavBar/>
       </div>
       <div className='hotspot-container'>
-      <TouristSpotComponent/>
+        {Tourist_Spot_Details.map(spot=>
+        (<TouristSpotComponent
+          spotId={spot.spot_id}
+          spotName={spot.spot_name}
+          spotImage={spot.spot_image}
+          spotDescription={spot.spot_description}
+          spotAlt={spot.image_alt}/>))}
       </div>
     </div>
   )

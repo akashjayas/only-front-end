@@ -1,9 +1,7 @@
-// NavBar.js
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Login from "C://Users//alfredeins_gabriel//Desktop//React//Only Front end//only-front-end//src//Assests//login_signUp.svg";
-import Logo from "C://Users//alfredeins_gabriel//Desktop//React//Only Front end//only-front-end//src//Assests//png//Logo.png";
+import Login from "A://TripPartner-OnlyBackend//src//Assests//login_signUp.svg";
+import Logo from "A://TripPartner-OnlyBackend//src//Assests//png//Logo.png";
 import './NavBar.css';
 import '../styleguide.css';
 import LoginPage from '../LoginPage/LoginPage';
