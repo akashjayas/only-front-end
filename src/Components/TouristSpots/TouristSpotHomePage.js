@@ -3,12 +3,12 @@ import NavBar from '../NavBar/NavBar';
 // import axios from 'axios';
 import './TouristSpotsHomePage.css';
 import TouristSpotComponent from './TouristSpotComponent';
+import Tourist_Spot_Details from '../Files/TouristSpotDetails';
 // import Loading from '../LoadingComponents/Loading';
-import Tourist_Spot_Details from './TouristSpotDetails';
 function TouristSpotHomePage() {
   return (
     <div className='home'>
-      <div className='nav'>
+      <div className='nav-container'>
         <NavBar/>
       </div>
       <div className='hotspot-container'>

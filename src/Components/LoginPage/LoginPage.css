@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   background-color: #240046;
-  max-height: 500px;
+  max-height: 550px;
   min-width: 450px;
   max-width: 300px;
   overflow: hidden;
@@ -19,7 +19,7 @@
   outline: none;
   border-radius: 4px;
 }
-.login-form, .reg-form {
+.login-form, .reg-form , .forgot-form{
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -47,7 +47,7 @@
   background-color: #240046;
 }
 
-.login-form label {
+.login-form label , .forgot-form label{
   color: #4b41a1;
   font-size: 2rem;
   justify-content: center;
@@ -157,9 +157,26 @@
   visibility: visible;
   opacity: 1;
 }
-
+.login-form .forgot-password{
+  display: block;
+  margin-top: 10px;
+  margin-left: -180px;
+  font-size: 11px;
+  color: #0099ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.forgot-form .back-to-sign-in{
+  display: block;
+  margin-top: 10px;
+  margin-left: -200px;
+  font-size: 11px;
+  color: #0099ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
 /*Button*/
-.login-form button,.reg-form button {
+.login-form button, .reg-form button , .forgot-form button{
   width: 85%;
   height: 40px;
   margin: 12px auto 10%;
@@ -173,8 +190,8 @@
   transition: .2s ease-in;
 }
 
-.form button:hover {
-  background-color: #6d44b8;
+.login-form button:hover, .forgot-form button:hover, .reg-form button:hover {
+  background-color: #4f1897;
 }
 
 /* LoginPage.css */

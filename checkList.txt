@@ -1,0 +1,4 @@
+check getOTP button
+design Footer
+develop home page
+design admin page

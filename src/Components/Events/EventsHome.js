@@ -1,11 +1,11 @@
 import NavBar from '../NavBar/NavBar'
 import EventComponent from './EventComponent'
 import './EventsHome.css';
-import Event_Details from './Event_Details';
+import Event_Details from '../Files/Event_Details';
 function EventsHome() {
   return (
     <div>
-      <div className='nav'><NavBar/></div>
+      <div className='nav-container'><NavBar/></div>
       <div className='event-container'>
       {Event_Details.map(details=>(
       <EventComponent

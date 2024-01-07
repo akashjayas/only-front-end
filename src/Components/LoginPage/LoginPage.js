@@ -1,78 +1,29 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
-// import axios from 'axios';
-
-function LoginPage({ onClose }) {
+import UserProfileAva from '../Files/User_profile_avator';
+function LoginPage({ onClose, onReturn }) {
   const [otpInput, setOtpInput] = useState(false);
-  // const [errorMessage, setErrorMessage] = useState('');
   const [isPopupVisible, setPopupVisible] = useState(false);
-// setErrorMessage("error");
-  // const [userName,setUserName]=useState("");
+  const [isforgotPassword,setForgotPassword]=useState(false);
   const [userPassword,setUserPassword]=useState("");
   const [userPasswordC,setUserPasswordC]=useState("");
   const [userEmail,setUserEmail]=useState("");
   const [userotp,setUserOtp]=useState("");
-  // const [otp,setOtp] = useState("");
-
-//   const getOtp=async()=>{
-//     toggleOTPinput();
-//     await axios.get(`http://localhost:8080/User/otp/${userEmail}`)
-//     .then(response=>{
-//       alert("check your email for otp");
-//       setOtp(response.data);
-//       console.log(response.data);
-//       console.log(response.config);
-//       console.log(response.headers);
-//       console.log(response.status);
-//       console.log(response.statusText);
-//     })
-//     .catch(error => {
-//       if (error.response.status === 400) {
-//         alert("Email already present");
-//         console.error('Error fetching data:', error);
-//       }
-//     });
-// }
-
-// const handleSubmit=async()=>{
-//   console.log('Current state values:', { otp, userotp, userPassword, userPasswordC });
-//   if(otp == userotp){
-//       if(userPassword === userPasswordC){
-//           try {
-//               const response = await axios.post('http://localhost:8080/User', {
-//                 userName,
-//                 userPassword,
-//                 userEmail,
-//               });
-//               // Handle success, e.g., redirect to another page or show a success message
-//               console.log(response.data);
-//             } catch (error) {
-//               // Handle error, e.g., show an error message
-//               console.error('Error registering user:', error);
-//             }
-// }else{
-//   alert("check password");
-// }
-//   }else{
-//       alert("Entered otp is wrong.");
-//   }
-// }
-
-//   const validateEmail = () => {
-//     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//     if (!emailRegex.test(userEmail)) {
-//       setErrorMessage('Invalid email address.');
-//       setPopupVisible(true);
-//     } else {
-//       getOtp();
-//     }
-//   };
-  
+  const [generateOtp, setGenerateOtp]=useState(false);
+  const showForgotPassword=()=>{
+    setForgotPassword(!isforgotPassword);
+  }
   const passwordRegx = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+])[A-Za-z0-9!@#$%^&*()_+]{8,}$/ ;
   const isPasswordValid=passwordRegx.test(userPassword);
   const closePopup = () => {
     setPopupVisible(false);
   };
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    const randomIndex = Math.floor(Math.random() * UserProfileAva.length);
+    onReturn(UserProfileAva[randomIndex]);
+    onClose();
+  }
   const toggleOTPinput = () =>{
     setOtpInput(!otpInput);
   };
@@ -88,62 +39,63 @@ function LoginPage({ onClose }) {
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     zIndex: 1000,
   };
-//   const handleLogin=async()=>{
-//     axios.get(`http://localhost:8080/User/email/${userEmail}`) 
-//     .then(response => {
-//       const message = userPassword === response.data.userPassword
-//       ? "Login successful"
-//       : "Incorrect password";
-// alert(message);
-// setErrorMessage(message);
-//     })
-//     .catch(error=>{
-//       alert("email not found");
-//     })
-//   }
-
   return (
     <div className='login-page-overlay' onClick={onClose}>
       <div className="login-signup-container" onClick={(e)=> e.stopPropagation()}>
     <input type="checkbox" id="chk" aria-hidden="true" />
     <div className="login">
-      <form className="login-form">
+      {!isforgotPassword ? (<><form className="login-form" onSubmit={handleSubmit}>
         <label htmlFor="chk" aria-hidden="true">Log in</label>
         <input
           className="login-input"
           type="email"
           name="email"
           placeholder="Email"
-          // value={userEmail}
-          // onChange={(e) => setUserEmail(e.target.value)}
+          // required
+        />
+        <input className="login-input"
+        type="password"
+        name="pswd"
+        placeholder="Password"
+        // required
+        />
+        <span className='forgot-password' onClick={()=>showForgotPassword()}>Forgot password?</span>
+        <button type='submit' >Log in</button>
+      </form>
+      </>) : (<><form className='forgot-form'>
+      <label htmlFor="chk" aria-hidden="true">Forgot password</label>
+        <input
+          className="login-input"
+          type="email"
+          name="email"
+          placeholder="Email"
           required
         />
-        <input className="login-input" 
-        type="password" 
-        // value={userPassword} 
-        name="pswd" 
-        placeholder="Password" 
-        required 
-        // onChange={(e)=>setUserPassword(e.target.value)}
+        <input className="login-input"
+        type="otp"
+        name="otp"
+        placeholder="Enter OTP"
         />
-        <button>Log in</button>
+        <span className='back-to-sign-in' onClick={()=>showForgotPassword()}>Back to sign in</span>
+        {generateOtp ? (
+          <><button type='submit' >Generate Password</button>
+          </>
+        ) : (<><button onClick={setGenerateOtp}>Get Otp</button>
+        </>)}
+        
       </form>
+      </>)}
     </div>
-
-
-
-
-
 
     <div className="register">
       <form className="reg-form" >
         <label htmlFor="chk" aria-hidden="true">Register</label>
-        <input className="reg-input" 
-        type="text" 
-        // value={userName} 
-        name="userName" 
-        placeholder="Username" 
-        required 
+        <input className="reg-input"
+        type="text"
+        // value={userName}
+        name="userName"
+        placeholder="Username"
+        required
         // onChange={(e)=>setUserName(e.target.value)}
         />
         <div className='reg' style={{ display: "flex", flexDirection: "row" }}>
@@ -152,7 +104,7 @@ function LoginPage({ onClose }) {
       type="text"
       name="otpreg"
       placeholder="Enter OTP"
-      pattern="\d{6}" 
+      pattern="\d{6}"
       value={userotp}
       onChange={(e)=>setUserOtp(e.target.value)}
       style={{ paddingRight: '40px' }}

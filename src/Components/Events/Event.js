@@ -1,7 +1,7 @@
 import NavBar from '../NavBar/NavBar'
 import { useParams } from 'react-router-dom'
 import './Event.css'
-import Event_details from './Event_Details';
+import Event_details from '../Files/Event_Details';
 function Event() {
   const {eventId} = useParams();
   
@@ -21,7 +21,7 @@ const event=Event_details.find(detail=>String(detail.event_id)===String(eventId)
               <button>Join</button>
               <button>Organize</button>
             </div>
-          </>
+          </> 
         ) : (
           <p>No data found</p>
         )}
