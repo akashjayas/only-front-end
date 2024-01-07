@@ -24,6 +24,9 @@ function LoginPage({ onClose, onReturn }) {
     onReturn(UserProfileAva[randomIndex]);
     onClose();
   }
+  const getOtp=()=>{
+    setGenerateOtp(true);
+  }
   const toggleOTPinput = () =>{
     setOtpInput(!otpInput);
   };
@@ -75,12 +78,13 @@ function LoginPage({ onClose, onReturn }) {
         type="otp"
         name="otp"
         placeholder="Enter OTP"
+        required
         />
         <span className='back-to-sign-in' onClick={()=>showForgotPassword()}>Back to sign in</span>
         {generateOtp ? (
-          <><button type='submit' >Generate Password</button>
+          <><button onClick={()=>{alert("check your email for new password");showForgotPassword()}} >Generate Password</button>
           </>
-        ) : (<><button onClick={setGenerateOtp}>Get Otp</button>
+        ) : (<><button onClick={getOtp}>Get Otp</button>
         </>)}
         
       </form>

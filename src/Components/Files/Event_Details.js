@@ -1,13 +1,13 @@
 const Event_Details=[{
         event_id:1,
-        event_name:"Candle Light India A Tribute To ARR",
+        event_name:"Candle Light India",
         event_happening:"6th JAN, 1AM",
         event_discription:"Candlelight India is a one of a kind immersive concert experience. It is curated to evoke a sense of wonder in concert goers by taking you on a magical journey where music and ambience converge to",
         event_address:"Good Shepherd Auditorium\nMuseum Rd, Opp Patricks Church, Shanthala Nagar, Richmond Town, Bengaluru, Karnataka",
         event_image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSjX3QsWY8tCokPMMrQZMwWo3lRNVJEzTPMaZEsnOf0_C1sSYE8UOVI3FQNw&s=10",
         image_alt:"Candle Light India A Tribute To ARR"
       },{event_id:2,
-        event_name:"Stand up Comedy Live at Koramangala",
+        event_name:"Stand up Comedy Live",
         event_happening:"7–29 Jan",
         event_discription:"Comedy Shots presents Wild Comedy Nights. Come on down with friends, family, enemies, random strangers,or by yourself for an absurd, edgy, and funny evening as these Bangalore regulars try to...",
         event_address:"Ground Floor, Cafe Reset, 6th Cross Rd, next to Koramangala club, 6th Block, Koramangala, Bengaluru, Karnataka",
