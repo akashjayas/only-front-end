@@ -41,6 +41,7 @@ function NavBar() {
       </div>
       <div className='search-container' >
           <SearchBar/>
+          heloo bro
         </div>
       <div className='login-signup-outline'>
         <button className='login-button' onClick={login}>
